@@ -68,7 +68,7 @@ class Configurator {
      * 
      * @return array The default options
      */
-    public function getDefaults()
+    protected function getDefaults()
     {
         $files = $this->getFiles(WP_DOT_CONFIG_PATH . 'config/**');
 
