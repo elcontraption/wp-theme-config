@@ -9,25 +9,29 @@
  */
 
 use WpDotConfig\Configurator;
+use WpDotConfig\Settings;
 
-if ( ! defined('WP_DOT_CONFIG_PATH')) 
+if ( ! defined('WP_DOT_CONFIG_PATH'))
 {
     define('WP_DOT_CONFIG_PATH', plugin_dir_path(__FILE__));
 }
 
 require WP_DOT_CONFIG_PATH . 'vendor/autoload.php';
 
-add_action('plugins_loaded', function() 
+// Initialize WpDotConfig
+add_action('plugins_loaded', function()
 {
-    Configurator::getInstance();
+    // Initialize Configurator
+    $configurator = Configurator::getInstance();
 
-    if (function_exists('config'))
-    {
-        return;
-    }
+    // Initialize Settings
+    new Settings($configurator->all());
 
-    function config($value)
+    if ( ! function_exists('config'))
     {
-        return Configurator::getInstance()->get($value);
+        function config($value)
+        {
+            return Configurator::getInstance()->get($value);
+        }
     }
 });

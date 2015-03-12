@@ -4,28 +4,28 @@ class Configurator {
 
     /**
      * Default config options
-     * 
+     *
      * @var array
      */
     protected $defaults;
 
     /**
      * Theme-specific overrides
-     * 
+     *
      * @var array
      */
     protected $overrides;
 
     /**
      * Merged config
-     * 
+     *
      * @var array
      */
     protected $config;
 
     /**
      * Merged config in dot notation
-     * 
+     *
      * @var array
      */
     protected $dotConfig;
@@ -38,7 +38,7 @@ class Configurator {
     /**
      * Constructor
      */
-    public function __construct()
+    protected function __construct()
     {
         $this->defaults = $this->getDefaults();
         $this->overrides = $this->getOverrides();
@@ -52,10 +52,10 @@ class Configurator {
     /**
      * Return an instance of this class
      */
-    public static function getInstance() 
+    public static function getInstance()
     {
         // If the single instance hasn't been set, set it now.
-        if (self::$instance == null) 
+        if (self::$instance == null)
         {
             self::$instance = new self;
         }
@@ -65,24 +65,24 @@ class Configurator {
 
     /**
      * Get default config options
-     * 
+     *
      * @return array The default options
      */
     protected function getDefaults()
     {
-        $files = $this->getFiles(WP_DOT_CONFIG_PATH . 'config/**');
+        $files = $this->getFiles(WP_DOT_CONFIG_PATH . 'config/*.php');
 
         return $this->makeConfigFromFiles($files);
     }
 
     /**
      * Get override config options
-     * 
+     *
      * @return array The override options
      */
     protected function getOverrides()
     {
-        $files = $this->getFiles(get_stylesheet_directory() . '/config/**');
+        $files = $this->getFiles(get_stylesheet_directory() . '/config/*.php');
 
         return $this->makeConfigFromFiles($files);
     }
@@ -101,7 +101,7 @@ class Configurator {
             return array();
         }
 
-        return array_filter($glob, function($file) 
+        return array_filter($glob, function($file)
         {
             return filetype($file) == 'file';
         });
@@ -109,7 +109,7 @@ class Configurator {
 
     /**
      * Read options from file arrays
-     * 
+     *
      * @param  array $files Incoming files
      * @return array        Config options
      */
@@ -127,6 +127,9 @@ class Configurator {
 
     /**
      * Flatten a multi-dimensional associative array with dots
+     *
+     * Stops at numeric arrays!
+     *
      * @param  array $array    Incoming array
      * @param  string $prepend Prepend string used on recursion
      * @return array           Outgoing array
@@ -137,13 +140,29 @@ class Configurator {
 
         foreach ($array as $key => $value)
         {
-            if (is_array($value))
-            {
+            if (is_array($value) && $this->is_assoc($value)) {
                 $results = array_merge($results, $this->dot($value, $prepend . $key . '.'));
-            } else 
-            {
-                $results[$prepend . $key] = $value;
+                continue;
             }
+
+            // if ( ! is_array($value)) {
+            //     $results[$prepend . $key] = $value;
+            //     continue;
+            // }
+            //
+            // // Is this an associative array
+            // if ($this->is_assoc($value)) {
+            //     $results = array_merge($results, $this->dot($value, $prepend . $key . '.'));
+            //     continue;
+            // }
+            //
+            // if (is_array($value))
+            // {
+            //     //$results = array_merge($results, $this->dot($value, $prepend . $key . '.'));
+            // } else
+            // {
+                $results[$prepend . $key] = $value;
+            //}
         }
 
         return $results;
@@ -151,9 +170,9 @@ class Configurator {
 
     /**
      * Get a config value
-     * 
-     * @param  string $value 
-     * @return mixed         
+     *
+     * @param  string $value
+     * @return mixed
      */
     public function get($value)
     {
@@ -175,7 +194,7 @@ class Configurator {
         $config = $this->config[$parts[0]];
 
         // Step through and reassign array for each additional part
-        for ($i = 1; $i < count($parts); $i++) 
+        for ($i = 1; $i < count($parts); $i++)
         {
             if ( ! isset($config[$parts[$i]]))
             {
@@ -185,6 +204,20 @@ class Configurator {
         }
 
         return $config;
+    }
+
+    public function all()
+    {
+        return $this->dotConfig;
+    }
+
+    /**
+     * Is array associative?
+     *
+     * http://stackoverflow.com/questions/173400/how-to-check-if-php-array-is-associative-or-sequential/4254008#4254008
+     */
+    protected function is_assoc(Array $array) {
+        return (bool)count(array_filter(array_keys($array), 'is_string'));
     }
 
 }

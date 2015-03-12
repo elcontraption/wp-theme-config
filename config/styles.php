@@ -8,7 +8,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | The stylesheets listed here will be registered and enqueued on the public
-    | side in the order they are defined. The 'src' attribute is relative to 
+    | side in the order they are defined. The 'src' attribute is relative to
     | the theme directory.
     |
     | http://codex.wordpress.org/Function_Reference/wp_enqueue_style
@@ -16,23 +16,23 @@ return array(
     */
     'public' => array(
 
-        array(
-            'handle'        => 'main',
-            'src'           => 'assets/dist/styles/main.css',
-            'deps'          => null,
-            'ver'           => null,
-            'media'         => null
-        ),
+        // array(
+        //     'handle'        => 'main',
+        //     'src'           => 'assets/dist/styles/main.css',
+        //     'deps'          => null,
+        //     'ver'           => null,
+        //     'media'         => null
+        // ),
 
     ),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Admin styles
     |--------------------------------------------------------------------------
     |
     | The stylesheets listed here will be registered and enqueued on the admin
-    | side in the order they are defined. The 'src' attribute is relative to 
+    | side in the order they are defined. The 'src' attribute is relative to
     | the theme directory.
     |
     | http://codex.wordpress.org/Function_Reference/wp_enqueue_style
@@ -53,6 +53,6 @@ return array(
     | http://codex.wordpress.org/Function_Reference/add_editor_style
     |
     */
-    'editor' => 'assets/dist/styles/editor-style.css',
+    'editor' => false
 
 );

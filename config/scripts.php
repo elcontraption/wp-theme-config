@@ -9,13 +9,13 @@ return array(
     |
     | Define paths to local and CDN-hosted versions of jQuery, as in HTML5
     | Boilerplate. Local path is relative to the theme, and CDN path should be
-    | a protocol-independent path to a CDN-served version of jQuery. Set to 
+    | a protocol-independent path to a CDN-served version of jQuery. Set to
     | false to disable.
     |
     | https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#google-cdn-for-jquery
     |
     */
-   
+
    'jquery-local'   => 'assets/dist/scripts/jquery.min.js',
    'jquery-cdn'     => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
 
@@ -24,7 +24,7 @@ return array(
     | Public scripts
     |--------------------------------------------------------------------------
     |
-    | The scripts listed here will be registered and enqueued for the public 
+    | The scripts listed here will be registered and enqueued for the public
     | side in the order they are defined. The 'src' attribute is relative to
     | the theme directory.
     |
@@ -39,7 +39,7 @@ return array(
             'deps'          => null,
             'ver'           => null,
             'in_footer'     => false
-        ),        
+        ),
 
         array(
             'handle'        => 'main',
@@ -56,7 +56,7 @@ return array(
     | Admin scripts
     |--------------------------------------------------------------------------
     |
-    | The scripts listed here will be registered and enqueued for the admin 
+    | The scripts listed here will be registered and enqueued for the admin
     | side in the order they are defined. The 'src' attribute is relative to
     | the theme directory.
     |

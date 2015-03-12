@@ -12,7 +12,7 @@ return array(
     | http://wpengineer.com/1438/wordpress-header/
     |
     */
-   
+
     'clean-head' => true,
 
     /*
@@ -23,7 +23,7 @@ return array(
     | * Remove WP version from RSS feeds.
     |
     */
-   
+
     'clean-feed' => true,
 
     /*
@@ -34,7 +34,7 @@ return array(
     | * Clean up output of stylesheet <link> tags
     |
     */
-   
+
    'clean-link-tag' => true,
 
    /*
@@ -45,7 +45,7 @@ return array(
     | * Remove extra body_class() classes
     |
     */
-   
+
    'clean-body-class' => true,
 
    /*
@@ -56,7 +56,7 @@ return array(
     | http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
     |
     */
-   
+
    'remove-dashboard-widgets' => true,
 
    /*
@@ -64,7 +64,7 @@ return array(
     | Remove unnecessary self-closing tags
     |--------------------------------------------------------------------------
     */
-   
+
    'remove-self-closing-tags' => true,
 
    /*
@@ -72,7 +72,7 @@ return array(
     | Fix menu active classes for custom post types
     |--------------------------------------------------------------------------
     */
-   
+
    'fix-menu-active-classes' => true,
 
 );
