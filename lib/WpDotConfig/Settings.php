@@ -64,7 +64,9 @@ class Settings {
                 continue;
             }
 
-            $this->settingsFunctions[$key]($value);
+            if ($value) {
+                $this->settingsFunctions[$key]($value);
+            }
         }
     }
 

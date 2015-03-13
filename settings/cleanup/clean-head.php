@@ -10,8 +10,6 @@
 
 return function ($value)
 {
-    if ( ! $value) return;
-
     add_action('init', function()
     {
         global $wp_widget_factory;

@@ -67,12 +67,4 @@ return array(
 
    'remove-self-closing-tags' => true,
 
-   /*
-    |--------------------------------------------------------------------------
-    | Fix menu active classes for custom post types
-    |--------------------------------------------------------------------------
-    */
-
-   'fix-menu-active-classes' => true,
-
 );

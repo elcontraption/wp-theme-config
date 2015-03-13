@@ -23,21 +23,24 @@ return array(
     |
     */
 
-   'sizes' => array(
+   'images' => array(
 
-        'thumb' => array(
+        array(
+            'name'      => 'thumb',
             'width'     => 150,
             'height'    => 150,
             'crop'      => true
         ),
 
-        'medium' => array(
+        array(
+            'name'      => 'medium',
             'width'     => 300,
             'height'    => 300,
             'crop'      => false
         ),
 
-        'large' => array(
+        array(
+            'name'      => 'large',
             'width'     => 1024,
             'height'    => 1024,
             'crop'      => false
