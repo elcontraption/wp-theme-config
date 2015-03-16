@@ -33,21 +33,13 @@ return array(
     */
     'public' => array(
 
-        array(
-            'handle'        => 'modernizr',
-            'src'           => 'assets/dist/scripts/modernizr.js',
-            'deps'          => null,
-            'ver'           => null,
-            'in_footer'     => false
-        ),
-
-        array(
-            'handle'        => 'main',
-            'src'           => 'assets/dist/scripts/main.js',
-            'deps'          => array('jquery'),
-            'ver'           => null,
-            'in_footer'     => true
-        ),
+        // array(
+        //     'handle'        => 'main',
+        //     'src'           => 'assets/dist/scripts/main.js',
+        //     'deps'          => array('jquery'),
+        //     'ver'           => null,
+        //     'in_footer'     => true
+        // ),
 
     ),
 
@@ -64,6 +56,14 @@ return array(
     |
     */
     'admin' => array(
+
+        // array(
+        //     'handle'        => 'admin',
+        //     'src'           => 'assets/dist/scripts/admin.js',
+        //     'deps'          => array('jquery'),
+        //     'ver'           => null,
+        //     'in_footer'     => true
+        // ),
 
     ),
 
