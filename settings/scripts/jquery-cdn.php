@@ -17,7 +17,7 @@ return function ($value)
         $value,
         array(),
         null,
-        null
+        false
     );
 
     // Add local fallback?
@@ -39,7 +39,7 @@ return function ($value)
             $add_fallback = false;
         }
 
-        if ($handle = 'jquery')
+        if ($handle === 'jquery')
         {
             $add_fallback = true;
         }

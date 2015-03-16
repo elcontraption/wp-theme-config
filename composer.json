@@ -1,5 +1,5 @@
 {
-    "name": "elcontraption/wp-dot-config",
+    "name": "elcontraption/wp-theme-config",
     "description": "Easy configuration for professional WordPress themes.",
     "version": "1.0.0-dev",
     "authors": [
@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WpDotConfig\\": "lib/WpDotConfig"
+            "WpThemeConfig\\": "lib/WpThemeConfig"
         }
     }
 }

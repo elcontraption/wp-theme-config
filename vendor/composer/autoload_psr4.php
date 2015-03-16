@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WpDotConfig\\' => array($baseDir . '/lib/WpDotConfig'),
+    'WpThemeConfig\\' => array($baseDir . '/lib/WpThemeConfig'),
 );

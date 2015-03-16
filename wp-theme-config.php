@@ -1,24 +1,24 @@
 <?php
 
 /**
- * Plugin Name:     WP Dot Config
+ * Plugin Name:     WP Theme Config
  * Description:     Easy configuration for professional WordPress themes.
  * Version:         1.0.0-dev
  * Author:          Darin Reid / Elegant Contraption
  * Author URI:      http://elcontraption.com/
  */
 
-use WpDotConfig\Configurator;
-use WpDotConfig\Settings;
+use WpThemeConfig\Configurator;
+use WpThemeConfig\Settings;
 
-if ( ! defined('WP_DOT_CONFIG_PATH'))
+if ( ! defined('WP_THEME_CONFIG_PATH'))
 {
-    define('WP_DOT_CONFIG_PATH', plugin_dir_path(__FILE__));
+    define('WP_THEME_CONFIG_PATH', plugin_dir_path(__FILE__));
 }
 
-require WP_DOT_CONFIG_PATH . 'vendor/autoload.php';
+require WP_THEME_CONFIG_PATH . 'vendor/autoload.php';
 
-// Initialize WpDotConfig
+// Initialize WpThemeConfig
 add_action('plugins_loaded', function()
 {
     // Initialize Configurator

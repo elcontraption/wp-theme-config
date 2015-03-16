@@ -1,4 +1,4 @@
-<?php namespace WpDotConfig;
+<?php namespace WpThemeConfig;
 
 class Settings {
 
@@ -17,7 +17,7 @@ class Settings {
 
     protected function getSettings()
     {
-        $files = $this->getFiles(WP_DOT_CONFIG_PATH . 'settings/**/*.php');
+        $files = $this->getFiles(WP_THEME_CONFIG_PATH . 'settings/**/*.php');
 
         return $this->makeSettingsFunctionsFromFiles($files);
     }

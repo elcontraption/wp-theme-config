@@ -1,4 +1,4 @@
-<?php namespace WpDotConfig;
+<?php namespace WpThemeConfig;
 
 class Configurator {
 
@@ -70,7 +70,7 @@ class Configurator {
      */
     protected function getDefaults()
     {
-        $files = $this->getFiles(WP_DOT_CONFIG_PATH . 'config/*.php');
+        $files = $this->getFiles(WP_THEME_CONFIG_PATH . 'config/*.php');
 
         return $this->makeConfigFromFiles($files);
     }
