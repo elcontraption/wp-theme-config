@@ -14,10 +14,12 @@ return array(
     |
     | https://github.com/h5bp/html5-boilerplate/blob/v4.3.0/doc/html.md#google-cdn-for-jquery
     |
+    | Example CDN jQuery URL: '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+    |
     */
 
-   'jquery-local'   => 'assets/dist/scripts/jquery.min.js',
-   'jquery-cdn'     => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js',
+   'jquery-local'   => false,
+   'jquery-cdn'     => false,
 
     /*
     |--------------------------------------------------------------------------
