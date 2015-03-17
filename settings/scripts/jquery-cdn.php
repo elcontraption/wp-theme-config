@@ -8,17 +8,20 @@ return function ($value)
 {
     if ( ! $value) return;
 
-    // Dequeue jQuery
-    wp_deregister_script('jquery');
+    add_action('wp_enqueue_scripts', function() use ($value)
+    {
+        // Dequeue jQuery
+        wp_deregister_script('jquery');
 
-    // Reregister CDN version of jQuery
-    wp_register_script(
-        'jquery',
-        $value,
-        array(),
-        null,
-        false
-    );
+        // Reregister CDN version of jQuery
+        wp_register_script(
+            'jquery',
+            $value,
+            array(),
+            null,
+            false
+        );
+    });
 
     // Add local fallback?
     if (! $this->config['scripts.jquery-local']) {
