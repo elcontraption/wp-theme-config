@@ -10,15 +10,15 @@
 
 return function($value)
 {
-    add_filter('get_avatar', function() {
+    add_filter('get_avatar', function($input) {
         return str_replace(' />', '>', $input);
     });
 
-    add_filter('comment_id_fields', function() {
+    add_filter('comment_id_fields', function($input) {
         return str_replace(' />', '>', $input);
     });
 
-    add_filter('post_thumbnail_html', function() {
+    add_filter('post_thumbnail_html', function($input) {
         return str_replace(' />', '>', $input);
     });
 };
