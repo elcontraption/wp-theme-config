@@ -34,4 +34,6 @@ add_action('plugins_loaded', function()
             return Configurator::getInstance()->get($value);
         }
     }
+
+    do_action('wp_theme_config_loaded');
 });

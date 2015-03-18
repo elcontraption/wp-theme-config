@@ -6,7 +6,7 @@
 
 return function($sizes)
 {
-    add_action('w_plugin_loaded', function() use ($sizes)
+    add_action('wp_theme_config_loaded', function() use ($sizes)
     {
         $reserved_names = array('thumb', 'thumbnail', 'medium', 'large', 'post-thumbnail');
 
