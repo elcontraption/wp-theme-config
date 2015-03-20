@@ -1,7 +1,6 @@
 {
     "name": "elcontraption/wp-theme-config",
-    "description": "Easy configuration for professional WordPress themes.",
-    "version": "1.0.0-dev",
+    "description": "Sensible (and configurable) configuration for WordPress.",
     "authors": [
         {
             "name": "Darin Reid / Elegant Contraption",
