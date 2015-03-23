@@ -27,4 +27,4 @@ require('vendor/autoload.php');
 $config = ThemeConfig::getInstance();
 ```
 
-Check out the [default config files](defaults).
+Check out the [default config files](defaults). You may override any of the settings within the default config files by creating a file of the same name in your theme's `config` directory. Your config override must return an array. You only need to declare the settings you would like to override.
