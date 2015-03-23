@@ -1,5 +1,5 @@
 # WordPress Theme Config
-Sensible configuration for theming WordPress.
+Sensible default settings and intelligent overrides for theming WordPress.
 
 ## Installation
 

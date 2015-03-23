@@ -1,6 +1,6 @@
 {
     "name": "elcontraption/wp-theme-config",
-    "description": "Sensible configuration for theming WordPress.",
+    "description": "Sensible default settings and intelligent overrides for theming WordPress.",
     "authors": [
         {
             "name": "Darin Reid",
