@@ -12,7 +12,15 @@ class ThemeConfig {
      */
     protected function __construct()
     {
+        add_action('plugins_loaded', array($this, 'init'));
+    }
 
+    /**
+     * Initialize configurator
+     */
+    public function init()
+    {
+        $configurator = Configurator::getInstance();
     }
 
     /**
