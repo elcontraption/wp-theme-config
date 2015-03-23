@@ -70,7 +70,7 @@ class Configurator {
      */
     protected function getDefaults()
     {
-        $files = $this->getFiles(dirname(__FILE__) . '/defaults/*.php');
+        $files = $this->getFiles('defaults/*.php');
 
         return $this->makeConfigFromFiles($files);
     }
