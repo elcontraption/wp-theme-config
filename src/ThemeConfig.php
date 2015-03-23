@@ -24,7 +24,7 @@ class ThemeConfig {
         $configurator = Configurator::getInstance();
 
         // Initialize settings
-        //new Settings($configurator->all());
+        new Settings($configurator->all());
     }
 
     /**
