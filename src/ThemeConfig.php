@@ -12,9 +12,7 @@ class ThemeConfig {
      */
     protected function __construct()
     {
-        print 'hi';
-
-        add_action('plugins_loaded', array($this, 'init'));
+        add_action('after_setup_theme', array($this, 'init'));
     }
 
     /**
