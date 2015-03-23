@@ -20,6 +20,7 @@ class ThemeConfig {
      */
     public function init()
     {
+        print 'init';
         // Initialize configurator
         $configurator = Configurator::getInstance();
 
