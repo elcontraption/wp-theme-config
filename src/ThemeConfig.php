@@ -12,6 +12,8 @@ class ThemeConfig {
      */
     protected function __construct()
     {
+        print 'hi';
+
         add_action('plugins_loaded', array($this, 'init'));
     }
 
@@ -22,10 +24,6 @@ class ThemeConfig {
     {
         // Initialize configurator
         $configurator = Configurator::getInstance();
-
-        print "<pre>";
-        print_r($configurator);
-        print "</pre>";
 
         // Initialize settings
         new Settings($configurator->all());
