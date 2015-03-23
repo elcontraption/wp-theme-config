@@ -20,12 +20,11 @@ class ThemeConfig {
      */
     public function init()
     {
-        print 'init';
         // Initialize configurator
         $configurator = Configurator::getInstance();
 
         // Initialize settings
-        new Settings($configurator->all());
+        //new Settings($configurator->all());
     }
 
     /**
