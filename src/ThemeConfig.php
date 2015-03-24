@@ -25,6 +25,8 @@ class ThemeConfig {
 
         // Initialize settings
         new Settings($configurator->all());
+
+        do_action('wp_theme_config_loaded');
     }
 
     /**
