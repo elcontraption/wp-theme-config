@@ -1,6 +1,7 @@
 {
     "name": "elcontraption/wp-theme-config",
     "description": "Sensible default settings and intelligent overrides for theming WordPress.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Darin Reid",
