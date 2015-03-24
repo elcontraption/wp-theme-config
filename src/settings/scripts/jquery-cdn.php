@@ -2,11 +2,16 @@
 
 /**
  * Load jQuery from CDN
+ *
+ * From Roots
  */
 
 return function ($value)
 {
     if ( ! $value) return;
+
+    // Not for admin side
+    if ( is_admin()) return;
 
     add_action('wp_enqueue_scripts', function() use ($value)
     {
@@ -28,7 +33,7 @@ return function ($value)
         return;
     }
 
-    add_filter('script_loader_src', function($src, $handle = null) {
+    $fallback = function($src, $handle = null) {
 
         static $add_fallback = false;
 
@@ -48,6 +53,8 @@ return function ($value)
         }
 
         return $src;
+    };
 
-    }, 10, 2);
+    add_filter('script_loader_src', $fallback, 10, 2);
+    add_action('wp_head', $fallback);
 };
