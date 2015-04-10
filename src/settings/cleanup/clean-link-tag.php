@@ -12,6 +12,10 @@ return function($value)
     {
         preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
 
+        print "<pre>";
+        print_r($matches);
+        print "</pre>";
+
         // Only display media if it is meaningful
         $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
 
