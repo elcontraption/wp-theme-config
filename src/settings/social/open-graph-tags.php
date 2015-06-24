@@ -12,21 +12,30 @@ return function($value)
     {
         global $post;
 
-        if ( ! is_object($post))
-        {
+        if ( ! is_object($post)) {
             return false;
         }
 
         $thumbnail = '';
 
-        if (has_post_thumbnail($post->ID))
-        {
+        if (has_post_thumbnail($post->ID)) {
             $thumb_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
             $thumbnail = $thumb_src[0];
+        } else {
+            
+            // Fallback image path?
+            if ($this->config['social.fallback-image-path']) {
+                $thumbnail = $this->config['social.fallback-image-path'];
+            }
         }
-        else
-        {
-            //$thumbnail = get_template_directory_uri() . '/assets/img/build/apple-touch-icon-114x114-precomposed.png';
+
+        // Advanced custom fields image field?
+        if ($this->config['social.advanced-custom-fields-image-field']) {
+            $field = get_field($this->config['social.advanced-custom-fields-image-field'], $post->ID);
+
+            if (isset($field['sizes']) && isset($field['sizes']['medium'])) {
+                $thumbnail = $field['sizes']['medium'];
+            }
         }
 
         ?>
