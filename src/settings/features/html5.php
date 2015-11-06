@@ -6,8 +6,5 @@
 
  return function($values)
  {
-     add_action('after_setup_theme', function() use ($values)
-     {
-         add_theme_support('html5', $values);
-     });
+    add_theme_support('html5', $values);
  };

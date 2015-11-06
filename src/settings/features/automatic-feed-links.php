@@ -6,8 +6,5 @@
 
 return function($value)
 {
-    add_action('after_setup_theme', function() use ($value)
-    {
-        add_theme_support('automatic-feed-links', $value);
-    });
+    add_theme_support('automatic-feed-links', $value);
 };
