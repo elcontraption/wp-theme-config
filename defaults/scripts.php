@@ -27,8 +27,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | The scripts listed here will be registered and enqueued for the public
-    | side in the order they are defined. The 'src' attribute is relative to
-    | the theme directory.
+    | side in the order they are defined.
     |
     | http://codex.wordpress.org/Function_Reference/wp_enqueue_script
     |
@@ -37,7 +36,7 @@ return array(
 
         // array(
         //     'handle'        => 'main',
-        //     'src'           => 'assets/dist/scripts/main.js',
+        //     'src'           => get_template_directory_uri() . '/assets/dist/scripts/main.js',
         //     'deps'          => array('jquery'),
         //     'ver'           => null,
         //     'in_footer'     => true
@@ -51,8 +50,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | The scripts listed here will be registered and enqueued for the admin
-    | side in the order they are defined. The 'src' attribute is relative to
-    | the theme directory.
+    | side in the order they are defined.
     |
     | http://codex.wordpress.org/Function_Reference/wp_enqueue_script
     |
@@ -61,7 +59,7 @@ return array(
 
         // array(
         //     'handle'        => 'admin',
-        //     'src'           => 'assets/dist/scripts/admin.js',
+        //     'src'           => get_template_directory_uri() . '/assets/dist/scripts/admin.js',
         //     'deps'          => array('jquery'),
         //     'ver'           => null,
         //     'in_footer'     => true
