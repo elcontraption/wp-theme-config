@@ -21,8 +21,10 @@ return array(
     | Enable root-relative URLs for specific environments.
     | Setting to 'true' will enable for all environments.
     |
-    | Uses getenv('WP_ENV') to detect the environment.
-    | Will be disabled if getenv('WP_ENV') returns nothing.
+    | Uses the WP_ENV constant to detect the environment.
+    | Will be disabled if WP_ENV is not defined.
+    |
+    | Set to false to disable.
     |
     | Note: this is probably bad to enable for production.
     | See https://yoast.com/relative-urls-issues/
