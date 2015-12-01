@@ -11,7 +11,7 @@ return function($styles)
         {
             wp_enqueue_style(
                 $style['handle'],
-                get_template_directory_uri() . '/' . $style['src'],
+                $style['src'],
                 $style['deps'],
                 $style['ver'],
                 $style['media']

@@ -8,8 +8,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | The stylesheets listed here will be registered and enqueued on the public
-    | side in the order they are defined. The 'src' attribute is relative to
-    | the theme directory.
+    | side in the order they are defined.
     |
     | http://codex.wordpress.org/Function_Reference/wp_enqueue_style
     |
@@ -18,7 +17,7 @@ return array(
 
         // array(
         //     'handle'        => 'main',
-        //     'src'           => 'assets/dist/styles/main.css',
+        //     'src'           => get_template_directory_uri() . '/assets/dist/styles/main.css',
         //     'deps'          => null,
         //     'ver'           => null,
         //     'media'         => null

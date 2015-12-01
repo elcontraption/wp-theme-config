@@ -11,7 +11,7 @@ return function($styles)
         {
             wp_enqueue_style(
                 $style['handle'],
-                get_template_directory_uri() . '/' . $style['src'],
+                $style['src'],
                 $style['deps'],
                 $style['ver'],
                 $style['media']
@@ -23,7 +23,7 @@ return function($styles)
     if ($this->config['styles.editor'])
     {
         add_action('admin_init', function() {
-            add_editor_style(get_template_directory_uri() . '/' . $this->config['styles.editor']);
+            add_editor_style($this->config['styles.editor']);
         });
     }
 };
