@@ -16,6 +16,11 @@
 return array(
 
     /**
+     * https://codex.wordpress.org/Title_Tag
+     */
+    'title-tag' => true,
+
+    /**
      * http://codex.wordpress.org/Post_Formats
      */
     'post-formats' => array(
