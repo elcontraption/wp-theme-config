@@ -49,6 +49,11 @@ return function($value)
         }
 
         ?>
+
+        <?php if ($this->config['social.facebook-app-id']) : ?>
+          <meta property="fb:app_id" content="<?php echo $this->config['social.facebook-app-id'] ?>" />
+        <?php endif ?>
+
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ) ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php echo get_permalink() ?>" />
