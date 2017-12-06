@@ -7,8 +7,20 @@ return array(
     | Add open graph meta tags to head
     |--------------------------------------------------------------------------
     */
-   
+
    'open-graph-tags' => true,
+
+   /*
+   |--------------------------------------------------------------------------
+   | Advanced Custom Fields description field
+   |--------------------------------------------------------------------------
+   |
+   | Add a specific Advanced Custom Field field name to use for the description
+   | field. Will fallback to get_the_excerpt().
+   |
+   */
+
+  'advanced-custom-fields-description-field' => false,
 
    /*
    |--------------------------------------------------------------------------
@@ -18,7 +30,7 @@ return array(
    | Path to a fallback image.
    |
    */
-  
+
    'fallback-image-path' => false,
 
    /*

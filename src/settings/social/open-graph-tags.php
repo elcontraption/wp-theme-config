@@ -19,6 +19,7 @@ return function($value)
         setup_postdata($post);
 
         $thumbnail = '';
+        $description = '';
 
         if (has_post_thumbnail($post->ID)) {
             $thumb_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
@@ -40,13 +41,20 @@ return function($value)
             }
         }
 
+        // Advanced custom fields description field?
+        if ($this->config['social.advanced-custom-fields-description-field']) {
+          $field = get_field($this->config['social.advanced-custom-fields-description-field'], $post->ID);
+
+          $description = $field ? $field : get_the_excerpt($post);
+        }
+
         ?>
         <meta property="og:title" content="<?php wp_title( '|', true, 'right' ) ?>" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="<?php echo get_permalink() ?>" />
         <meta property="og:image" content="<?php echo $thumbnail ?>" />
         <meta property="og:site_name" content="<?php bloginfo('name') ?>" />
-        <meta property="og:description" content="<?php echo get_the_excerpt($post) ?>" />
+        <meta property="og:description" content="<?php echo $description ?>" />
         <?php
     });
 };
