@@ -36,8 +36,8 @@ return function($value)
         if ($this->config['social.advanced-custom-fields-image-field']) {
             $field = get_field($this->config['social.advanced-custom-fields-image-field'], $post->ID);
 
-            if (isset($field['sizes']) && isset($field['sizes']['medium'])) {
-                $thumbnail = $field['sizes']['medium'];
+            if (isset($field['sizes']) && isset($field['sizes']['large'])) {
+                $thumbnail = $field['sizes']['large'];
             }
         }
 
