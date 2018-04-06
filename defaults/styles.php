@@ -7,10 +7,12 @@ return array(
     | Public styles
     |--------------------------------------------------------------------------
     |
-    | The stylesheets listed here will be registered and enqueued on the public
-    | side in the order they are defined.
+    | The stylesheets listed here will be registered and optionally enqueued on
+    | the public side in the order they are defined.
     |
-    | http://codex.wordpress.org/Function_Reference/wp_enqueue_style
+    | Setting `enqueue` to `true` will enqueue the style globally.
+    |
+    | https://codex.wordpress.org/Function_Reference/wp_register_style
     |
     */
     'public' => array(
@@ -20,7 +22,8 @@ return array(
         //     'src'           => get_template_directory_uri() . '/assets/dist/styles/main.css',
         //     'deps'          => null,
         //     'ver'           => null,
-        //     'media'         => null
+        //     'media'         => null,
+        //     'enqueue'       => false
         // ),
 
     ),
@@ -30,14 +33,25 @@ return array(
     | Admin styles
     |--------------------------------------------------------------------------
     |
-    | The stylesheets listed here will be registered and enqueued on the admin
-    | side in the order they are defined. The 'src' attribute is relative to
-    | the theme directory.
+    | The stylesheets listed here will be registered and optionally enqueued on
+    | the admin side in the order they are defined. The 'src' attribute is
+    | relative to the theme directory.
     |
-    | http://codex.wordpress.org/Function_Reference/wp_enqueue_style
+    | Setting `enqueue` to `true` will enqueue the style globally.
+    |
+    | https://codex.wordpress.org/Function_Reference/wp_register_style
     |
     */
     'admin' => array(
+
+      // array(
+      //     'handle'        => 'main',
+      //     'src'           => get_template_directory_uri() . '/assets/dist/styles/admin.css',
+      //     'deps'          => null,
+      //     'ver'           => null,
+      //     'media'         => null,
+      //     'enqueue'       => false
+      // ),
 
     ),
 

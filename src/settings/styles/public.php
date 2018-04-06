@@ -9,13 +9,16 @@ return function($styles)
     {
         foreach ($styles as $style)
         {
-            wp_enqueue_style(
+            wp_register_style(
                 $style['handle'],
                 $style['src'],
                 $style['deps'],
                 $style['ver'],
                 $style['media']
             );
+
+            if (!isset($style['enqueue']) || $style['enqueue'] === false) continue;
+            wp_enqueue_style($style['handle']);
         }
     });
 };
