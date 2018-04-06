@@ -26,10 +26,12 @@ return array(
     | Public scripts
     |--------------------------------------------------------------------------
     |
-    | The scripts listed here will be registered and enqueued for the public
-    | side in the order they are defined.
+    | The scripts listed here will be registered and opionally enqueued for the
+    | public side in the order they are defined.
     |
-    | http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+    | Setting `enqueue` to `true` will enqueue the script globally.
+    |
+    | https://developer.wordpress.org/reference/functions/wp_register_script/
     |
     */
     'public' => array(
@@ -39,7 +41,8 @@ return array(
         //     'src'           => get_template_directory_uri() . '/assets/dist/scripts/main.js',
         //     'deps'          => array('jquery'),
         //     'ver'           => null,
-        //     'in_footer'     => true
+        //     'in_footer'     => true,
+        //     'enqueue'       => true
         // ),
 
     ),
@@ -49,10 +52,10 @@ return array(
     | Admin scripts
     |--------------------------------------------------------------------------
     |
-    | The scripts listed here will be registered and enqueued for the admin
-    | side in the order they are defined.
+    | The scripts listed here will be registered and optionally enqueued for the
+    | admin side in the order they are defined.
     |
-    | http://codex.wordpress.org/Function_Reference/wp_enqueue_script
+    | https://developer.wordpress.org/reference/functions/wp_register_script/
     |
     */
     'admin' => array(
@@ -62,7 +65,8 @@ return array(
         //     'src'           => get_template_directory_uri() . '/assets/dist/scripts/admin.js',
         //     'deps'          => array('jquery'),
         //     'ver'           => null,
-        //     'in_footer'     => true
+        //     'in_footer'     => true,
+        //     'enqueue'       => true
         // ),
 
     ),
